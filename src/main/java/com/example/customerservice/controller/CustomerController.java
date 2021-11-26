@@ -21,5 +21,10 @@ public class CustomerController {
     public Customer findCustomerById(@PathVariable long id) {
         return customerService.findCustomerById(id);
     }
-    
+
+    @Value("${welcome}")
+    private String welcome;
+
+    @GetMapping("/")
+    public String helloWorld(){return welcome;}
 }
